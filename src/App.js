@@ -9,7 +9,7 @@ function App() {
     <>
       <NavBar />
       <Switch>
-        <Route path='/update-book'>
+        <Route path='/update-book/:id'>
           <UpdateBook />
         </Route>
         <Route path='/create-book'>
