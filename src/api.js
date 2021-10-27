@@ -8,6 +8,18 @@ export const getAllBooks = async () => {
     return response.json();
 };
 
+export const getBook = async ({ queryKey }) => {
+    /* eslint-disable no-unused-vars */
+    const [_key, { id }] = queryKey;
+    const response = await fetch(`${process.env.REACT_APP_API_SERVER}/books/${id}`);
+
+    if (!response.ok) {
+        throw new Error(response.json().message);
+    }
+
+    return response.json();
+};
+
 export const removeBook = async (id) => {
     const response = await fetch(
         `${process.env.REACT_APP_API_SERVER}/books/${id}`,
